@@ -21,7 +21,7 @@ https://devcenter.heroku.com/articles/free-dyno-hours#usage
 注册地址：https://signup.heroku.com/ （注册和部署过程可能需要梯子）
 
 
-## 部署方法一（简单）
+## 部署方法一（简单，不推荐）
 
 本方法为快速部署。
 
@@ -51,27 +51,8 @@ https://devcenter.heroku.com/articles/free-dyno-hours#usage
 
 独立goproxy客户端：
 
-`proxy.exe http -t tcp -p :6600 -T wss -P test1-goproxy.herokuapp.com:443 --parent-ws-password pass -q 8.8.8.8:53 --timeout 30000`
+`proxy.exe http -t tcp -p :1080 -T wss -P test1-goproxy.herokuapp.com:443 --parent-ws-password pass -q 8.8.8.8:53 --timeout 30000`
 
-在浏览器上设置代理：127.0.0.1:6600   http
-
-安卓客户端：
-
-安卓 [goproxy-ss-plugin](https://github.com/snail007/goproxy-ss-plugin-android) 插件配置可以写：
-
-```text
-主机：test1-goproxy.herokuapp.com
-
-端口：443
-
-加密方法：aes-256-cfb
-
-密码：123
-
-插件参数：
-```
-
-`-S http -j 123 -h aes-256-cfb -T wss -P test1-goproxy.herokuapp.com:443 --parent-ws-password pass --timeout 30000`
 
 注意：本次部署中需要调整的就是`test1-goproxy`改为你自己的名称。
 
@@ -89,7 +70,9 @@ https://devcenter.heroku.com/articles/free-dyno-hours#usage
 
 <img src="/doc/2.1.png" width="500px" height="auto">
 
-修改第7行内容，详细参考：https://snail007.github.io/goproxy/posts/http_cdn_ws/
+修改第7行内容，把 pass 改为自己设定的密码，可用大小写字母+数字，30位以上。
+
+proxy使用文档参考：https://snail007.github.io/goproxy/posts/http_cdn_ws/
 
 二、在heroku上部署
 
@@ -127,25 +110,6 @@ https://devcenter.heroku.com/articles/free-dyno-hours#usage
 
 独立goproxy客户端：
 
-`proxy.exe http -t tcp -p :6600 -T wss -P test2-goproxy.herokuapp.com:443 --parent-ws-password pass -q 8.8.8.8:53 --timeout 30000`
-
-在浏览器上设置代理：127.0.0.1:6600   http
-
-安卓客户端：
-
-安卓 [goproxy-ss-plugin](https://github.com/snail007/goproxy-ss-plugin-android) 插件配置可以写：
-
-```text
-主机：test2-goproxy.herokuapp.com
-
-端口：443
-
-加密方法：aes-256-cfb
-
-密码：123
-
-插件参数：
-```
-`-S http -j 123 -h aes-256-cfb -T wss -P test2-goproxy.herokuapp.com:443 --parent-ws-password pass --timeout 30000`
+`proxy.exe http -t tcp -p :1080 -T wss -P test2-goproxy.herokuapp.com:443 --parent-ws-password pass -q 8.8.8.8:53 --timeout 30000`
 
 注意：本次部署中需要修改test2-goproxy为你自己的名称。
