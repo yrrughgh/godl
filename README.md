@@ -33,7 +33,7 @@
 
 二、在客户端上执行
 
-`proxy.exe http -t tcp -p :1080 -T wss -P test1-goproxy.herokuapp.com:443 --parent-ws-password pass -q 8.8.8.8:53 --timeout 30000`
+`proxy.exe http -t tcp -p :1080 -T wss -P xxx.herokuapp.com:443 --parent-ws-password goproxy123456 -q 8.8.8.8:53 --timeout 30000`
 
 
 goproxy使用文档参考：https://snail007.github.io/goproxy/posts/http_cdn_ws/
