@@ -29,7 +29,7 @@
 
 <img src="/doc/2.png" width="500px" height="auto">
 
-点View,把地址栏中的账号复制下来。
+点View <img src="/doc/111.png" width="20px" height="auto">,把地址栏中的账号复制下来。
 
 二、在客户端上执行
 
