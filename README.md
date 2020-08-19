@@ -11,17 +11,17 @@
 
 2、登陆好后，点击
 
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/VerSign010/goproxy-heroku)
+        [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/VerSign010/goproxy-heroku)
 
 3、执行以下四个步骤，见下图：
 
-（1）输入App名字
+（1）App name: 输入App名字
 
-（2）Choose a region:选择一个地区.例如United States或Europe
+（2）Choose a region: 选择一个地区.例如United States或Europe
 
-（3）输入密码passowrd，可用大小写字母+数字，建议30位以上
+（3）PASSWORD: 输入密码，可用大小写字母+数字，建议30位以上
 
-（4）点击部署app：Deploy app
+（4）点击部署app: Deploy app
 
 <img src="/doc/1.png" width="500px" height="auto">
 
@@ -29,9 +29,9 @@
 
 <img src="/doc/2.png" width="500px" height="auto">
 
-二、在客户端上执行
+点View,把地址栏中的账号复制下来。
 
-独立goproxy客户端：
+二、在客户端上执行
 
 `proxy.exe http -t tcp -p :1080 -T wss -P test1-goproxy.herokuapp.com:443 --parent-ws-password pass -q 8.8.8.8:53 --timeout 30000`
 
