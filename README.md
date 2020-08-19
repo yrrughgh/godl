@@ -27,7 +27,7 @@
 
 4、执行完成以后，这是就完成了部署。
 
-<img src="/doc/2.png" width="500px" height="auto">
+<img src="/doc/2.png" width="400px" height="auto">
 
 点View <img src="/doc/111.png" width="80px" height="auto">,把地址栏中的账号复制下来。
 
