@@ -23,7 +23,7 @@
 
 （4）点击部署app: Deploy app
 
-<img src="/doc/1.png" width="600px" height="auto">
+<img src="/doc/1.png" width="500px" height="auto">
 
 4、执行完成以后，这是就完成了部署。
 
