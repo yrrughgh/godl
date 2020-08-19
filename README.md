@@ -1,27 +1,27 @@
-## gorpxoy-heroku
+## goproxy-heroku
 
-### Heroku 是一个支持多种编程语言的云平台即服务，gorpxoy-heroku 则是可部署在 Heroku 平台的 gorpxoy 服务。gorpxoy-heroku 使用的 WebSocket 代替原本的 sockets 作为底层传输。
+### Heroku 是一个支持多种编程语言的云平台即服务，goproxy-heroku 则是可部署在 Heroku 平台的 goproxy 服务。goproxy-heroku 使用的 WebSocket 代替原本的 sockets 作为底层传输。
 
 
-## 部署方法一（简单，不推荐）
-
-本方法为快速部署。
+## 部署方法
 
 一、在heroku上的部署
 
-1、登陆https://dashboard.heroku.com/login
+1、登陆heroku https://dashboard.heroku.com/login
 
 2、登陆好后，点击
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/VerSign010/goproxy-heroku)
 
-3、执行以下三个步骤，见下图：
+3、执行以下四个步骤，见下图：
 
-（1）输入App name.例如`test1-goproxy`
+（1）输入App名字
 
-（2）Choose a region:选择一个.例如United States
+（2）Choose a region:选择一个地区.例如United States或Europe
 
-（3）点击：Deploy app
+（3）输入密码passowrd，可用大小写字母+数字，建议30位以上
+
+（4）点击部署app：Deploy app
 
 <img src="/doc/1.png" width="500px" height="auto">
 
@@ -36,62 +36,4 @@
 `proxy.exe http -t tcp -p :1080 -T wss -P test1-goproxy.herokuapp.com:443 --parent-ws-password pass -q 8.8.8.8:53 --timeout 30000`
 
 
-注意：本次部署中需要调整的就是`test1-goproxy`改为你自己的名称。
-
-## 部署方法二
-
-该方法相对方法一步骤多一些，但是可以自己设置加密密码，修改启动参数。
-
-本方法是fork项目后，可以修改相关的参数，再在heroku上部署。
-
-一、在github上fork该项目并修改相关参数
-
-（1）fork项目：https://github.com/snail007/goproxy-heroku
-
-（2）修改配置参数，具体就是修改bootstrap里的内容，点击该文件
-
-<img src="/doc/2.1.png" width="500px" height="auto">
-
-修改第7行内容，把 pass 改为自己设定的密码，可用大小写字母+数字，30位以上。
-
-proxy使用文档参考：https://snail007.github.io/goproxy/posts/http_cdn_ws/
-
-二、在heroku上部署
-
-1、登陆https://dashboard.heroku.com/apps
-
-2、选择New -> Create new app
-
-<img src="/doc/2.2.png" width="500px" height="auto">
-
-3、执行以下三个步骤，见下图：
-
-（1）输入App name.例如`test2-goproxy`
-
-（2）Choose a region:选择一个.例如United States
-
-（3）点击：Create app
-
-<img src="/doc/2.3.png" width="500px" height="auto">
-
-选择Deploy->GitHub Connect to github
-
-<img src="/doc/2.4.png" width="500px" height="auto">
-
-4、连接到自己的github，搜索goproxy-heroku项目，点击连接Connect
-
-<img src="/doc/2.5.png" width="500px" height="auto">
-
-5、手动部署Manual deploy -> Deploy Branch， 部署成功。
-
-<img src="/doc/2.6.png" width="500px" height="auto">
-<br>
-<img src="/doc/2.7.png" width="500px" height="auto">
-
-三、在客户端上执行（默认不修改代码）
-
-独立goproxy客户端：
-
-`proxy.exe http -t tcp -p :1080 -T wss -P test2-goproxy.herokuapp.com:443 --parent-ws-password pass -q 8.8.8.8:53 --timeout 30000`
-
-注意：本次部署中需要修改test2-goproxy为你自己的名称。
+goproxy使用文档参考：https://snail007.github.io/goproxy/posts/http_cdn_ws/
